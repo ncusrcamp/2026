@@ -1,0 +1,85 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform .3s ease-in-out;
+  overflow: visible;
+}
+
+.navbar-visible { transform: translateY(0); }
+.navbar-hidden  { transform: translateY(-100%); }
+.navbar > ul > li { position: relative; } 
+.navbar > ul > li > a { display: inline-flex; align-items: center; }
+
+
+.navbar > ul {
+  list-style: none;
+  display: flex;         /* ← 只套在頂層 */
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-trigger { gap: 6px; cursor: pointer; }
+
+.caret {
+  display: inline-flex;
+  line-height: 0;
+  transition: transform .2s ease;
+  color: #333;
+}
+.dropdown:hover .caret { transform: rotate(180deg); }
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;                          /* 緊貼父層底部（含 padding 區） */
+  left: 0;
+  min-width: 220px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;                          /* ← 不要 margin-top，避免出現「空隙」 */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  z-index: 1000;
+  display: none;                      /* 預設完全隱藏、不占位 */
+  opacity: 0;
+  pointer-events: none;               /* 不可點（避免 hover 外也能點到）*/
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu { /* 鍵盤/觸控可用 */
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-menu li { padding: 0; }
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 14px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover { background: #f4f4f4; }

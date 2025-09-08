@@ -1,0 +1,54 @@
+.feedback-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.feedback-title {
+  font-size: 2rem;
+  margin-bottom: 28px;
+  color: #333;
+}
+
+/* 2 列 × 3 欄（桌機） */
+.feedback-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 欄 */
+  grid-auto-rows: 1fr;                   /* 高度自適 */
+  gap: 16px;
+}
+
+/* 每張圖保持原比例；加一點浮起與縮放效果 */
+.feedback-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feedback-item:hover {
+  transform: translateY(-2px);
+}
+
+.feedback-item img {
+  width: 100%;
+  height: auto; /* 不裁切，保留原比例 */
+  display: block;
+  transition: transform .35s ease;
+}
+.feedback-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 平板：2 欄 × 3 列 */
+@media (max-width: 991.98px) {
+  .feedback-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 手機：1 欄 × 6 列 */
+@media (max-width: 575.98px) {
+  .feedback-grid {
+    grid-template-columns: 1fr;
+  }
+}

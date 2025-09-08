@@ -1,0 +1,134 @@
+/* src/components/ResultsSection.css */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+}
+
+/* Filter Tabs（與 Groovin 類似） */
+.portfolio-flters {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 25px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-flters li {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    font-size: 0.95rem;
+    transition: all .2s ease;
+}
+
+.portfolio-flters li:hover {
+    color: #78570e;
+    background: #ffffff;
+}
+
+.portfolio-flters .filter-active {
+    color: #ffffff;
+    background: #78570e;
+    border-color: #78570e;
+}
+
+/* 容器（fitRows） */
+.portfolio-container {
+    position: relative;
+}
+
+/* 讓 fitRows 在桌機是 4 欄、平板 2 欄、手機 1 欄 */
+.portfolio-item {
+    position: relative;
+    margin: 0;
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid-sizer {
+    width: 25%;
+    /* 桌機四欄 */
+}
+
+/* 斷點依需求可調整 */
+@media (min-width: 576px) {
+    .portfolio-item {
+        width: 50%;
+    }
+
+    /* 2 欄 */
+}
+
+@media (min-width: 992px) {
+    .portfolio-item {
+        width: 25%;
+    }
+
+    /* 4 欄 */
+}
+
+/* 其它 Groovin 風格同前，保持不變 */
+
+.portfolio-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.img-fluid {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* 保留原比例 */
+    transition: transform .4s ease;
+}
+
+.portfolio-info {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 110, 253, 0.0);
+    color: #fff;
+    display: flex;
+    opacity: 0;
+    align-items: flex-end;
+    padding: 18px;
+    transition: background .3s ease, opacity .3s ease;
+}
+
+.portfolio-info h4 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+}
+
+.portfolio-info p {
+    margin: 0;
+    font-size: .9rem;
+    opacity: .9;
+}
+
+.portfolio-wrap:hover .img-fluid {
+    transform: scale(0.95);
+}
+
+/* 清除 float（讓容器自動撐高；Isotope 會做定位，但保險） */
+.portfolio-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 容器內距 */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
