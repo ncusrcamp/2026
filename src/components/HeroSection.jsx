@@ -11,15 +11,13 @@ const images = [
 export default function HeroSection({ scrollY }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 背景輪播
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // 5秒切換
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  // Logo 滑動 & 透明度
   const heroHeight = window.innerHeight;
   const progress = Math.min(scrollY / heroHeight, 1);
   const translateY = progress * 150;

@@ -33,7 +33,6 @@ export default function FAQSection() {
                 <span className="arrow">{isOpen ? "−" : "+"}</span>
               </button>
 
-              {/* 用 grid 高度動畫：0fr ⇄ 1fr */}
               <div className="faq-answer">
                 <div className="faq-answer-inner">
                   <p>{item.answer}</p>

@@ -8,10 +8,8 @@ export default function FloatingControls() {
   const [playing, setPlaying] = useState(false);
   const [showBackTop, setShowBackTop] = useState(false);
 
-  // 取得音訊元素
   const getAudio = () => document.getElementById("bg-audio");
 
-  // 同步目前狀態
   const syncState = useCallback(() => {
     const a = getAudio();
     if (!a) return;
@@ -24,7 +22,6 @@ export default function FloatingControls() {
     const a = getAudio();
     if (!a) return;
     syncState();
-    // 若來源/狀態改變，同步 UI
     const onPlay = () => syncState();
     const onPause = () => syncState();
     const onVolume = () => syncState();
@@ -38,7 +35,6 @@ export default function FloatingControls() {
     };
   }, [syncState]);
 
-  // 捲動偵測（顯示回到頂端）
   useEffect(() => {
     const onScroll = () => setShowBackTop(window.scrollY > 300);
     onScroll();
@@ -54,7 +50,6 @@ export default function FloatingControls() {
       try {
         if (a.paused) await a.play();
       } catch (e) {
-        // 若仍被阻擋，恢復靜音
         a.muted = true;
       }
     } else {
@@ -70,7 +65,6 @@ export default function FloatingControls() {
       try {
         await a.play();
       } catch (e) {
-        // 被阻擋就靜音播放
         a.muted = true;
         await a.play().catch(() => {});
       }
@@ -85,7 +79,6 @@ export default function FloatingControls() {
 
   return (
     <div className="fab-container" aria-live="polite">
-      {/* 音樂控制：短按切換靜音；長按可切換播放/暫停（可自行移除） */}
       <button
         className="fab"
         type="button"
@@ -98,7 +91,6 @@ export default function FloatingControls() {
         {muted || !playing ? "🔇" : "🔊"}
       </button>
 
-      {/* 回到頂端：滾到一定高度才顯示 */}
       <button
         className={`fab ${showBackTop ? "fab-show" : "fab-hide"}`}
         type="button"

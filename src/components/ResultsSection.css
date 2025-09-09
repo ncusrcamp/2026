@@ -6,7 +6,6 @@
     font-size: 2rem;
 }
 
-/* Filter Tabs（與 Groovin 類似） */
 .portfolio-flters {
     list-style: none;
     padding: 0;
@@ -38,12 +37,10 @@
     border-color: #78570e;
 }
 
-/* 容器（fitRows） */
 .portfolio-container {
     position: relative;
 }
 
-/* 讓 fitRows 在桌機是 4 欄、平板 2 欄、手機 1 欄 */
 .portfolio-item {
     position: relative;
     margin: 0;
@@ -54,16 +51,13 @@
 
 .grid-sizer {
     width: 25%;
-    /* 桌機四欄 */
 }
 
-/* 斷點依需求可調整 */
 @media (min-width: 576px) {
     .portfolio-item {
         width: 50%;
     }
 
-    /* 2 欄 */
 }
 
 @media (min-width: 992px) {
@@ -71,10 +65,8 @@
         width: 25%;
     }
 
-    /* 4 欄 */
 }
 
-/* 其它 Groovin 風格同前，保持不變 */
 
 .portfolio-wrap {
     position: relative;
@@ -88,7 +80,6 @@
     display: block;
     width: 100%;
     height: auto;
-    /* 保留原比例 */
     transition: transform .4s ease;
 }
 
@@ -119,14 +110,12 @@
     transform: scale(0.95);
 }
 
-/* 清除 float（讓容器自動撐高；Isotope 會做定位，但保險） */
 .portfolio-container::after {
     content: "";
     display: block;
     clear: both;
 }
 
-/* 容器內距 */
 .container {
     max-width: 1140px;
     margin: 0 auto;

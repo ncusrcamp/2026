@@ -5,7 +5,6 @@ export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastY, setLastY] = useState(0);
 
-  // 捲動：下滑隱藏、上滑顯示
   useEffect(() => {
     let ticking = false;
     const onScroll = () => {

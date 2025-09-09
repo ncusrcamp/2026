@@ -5,11 +5,11 @@ import "./reveal.css";
 export default function Reveal({
   children,
   as: Tag = "div",
-  threshold = 0.15,         // 進入畫面多少比例觸發
-  rootMargin = "0px 0px -10% 0px", // 提前一點觸發
-  once = true,              // 只觸發一次
-  delay = 0,                // 毫秒延遲
-  animation = "fade-up",    // 動畫種類：fade-up / fade / fade-right / fade-left
+  threshold = 0.15,
+  rootMargin = "0px 0px -10% 0px",
+  once = true,
+  delay = 0,
+  animation = "fade-up",
   className = "",
   ...rest
 }) {
@@ -20,7 +20,6 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    // 無障礙：使用者偏好減少動態 → 直接顯示
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
       setVisible(true);
@@ -41,7 +40,6 @@ export default function Reveal({
             }
             if (once) io.unobserve(entry.target);
           } else if (!once) {
-            // 若允許重複觸發：離開視口時隱藏
             setVisible(false);
           }
         });

@@ -1,4 +1,4 @@
-/* src/components/FAQSection.css － 套用你要的視覺，但用 grid 高度動畫 */
+/*src/components/FAQSection.css*/
 
 .faq-section {
   padding: 60px 20px;
@@ -16,7 +16,6 @@
   text-align: left;
 }
 
-/* 外框陰影在展開時加上 */
 .faq-item {
   margin-bottom: 16px;
   overflow: hidden;
@@ -26,7 +25,6 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* 問題列（維持你的配色） */
 .faq-question {
   color: #ffffff;
   width: 100%;
@@ -44,7 +42,6 @@
   background: #4c3603;
 }
 
-/* 右側符號 */
 .faq-question .arrow {
   position: absolute;
   right: 16px;
@@ -52,10 +49,9 @@
   line-height: 1;
 }
 
-/* 內容：用 grid-template-rows 做對稱開闔（取代 max-height） */
 .faq-answer {
   display: grid;
-  grid-template-rows: 0fr;                 /* 收起 */
+  grid-template-rows: 0fr;                 
   transition:
     grid-template-rows 0.7s ease,
     opacity 0.7s ease,
@@ -66,19 +62,17 @@
   color: #4c3603;
 }
 
-/* 展開時 */
 .faq-item.open .faq-answer {
-  grid-template-rows: 1fr;                 /* 自動高度 */
+  grid-template-rows: 1fr;                 
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 讓內容在 0fr/1fr 間被裁切 */
 .faq-answer-inner {
   overflow: hidden;
 }
 
-/* 內容排版維持你的設定 */
+
 .faq-answer p {
   margin: 0;
   padding: 16px;
@@ -86,7 +80,7 @@
   line-height: 1.6;
 }
 
-/* RWD 與你一致 */
+
 @media (max-width: 600px) {
   .faq-question {
     padding: 12px;
@@ -98,7 +92,7 @@
   }
 }
 
-/* 動態偏好：關閉動畫 */
+
 @media (prefers-reduced-motion: reduce) {
   .faq-answer,
   .faq-item.open .faq-answer {

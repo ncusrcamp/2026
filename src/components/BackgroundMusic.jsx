@@ -10,15 +10,13 @@ export default function BackgroundMusic() {
 
     const tryPlay = async () => {
       try {
-        await audio.play(); // 嘗試有聲自動播放
+        await audio.play(); 
         audio.muted = false;
       } catch (err) {
-        // 被瀏覽器阻擋 → 靜音播放
         audio.muted = true;
         try {
           await audio.play();
         } catch (e) {
-          // 如果靜音播放也失敗，通常是檔案或路徑問題
           console.warn("背景音樂播放失敗", e);
         }
       }

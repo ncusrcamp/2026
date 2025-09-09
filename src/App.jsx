@@ -13,10 +13,7 @@ import FAQSection from "./components/FAQSection";
 import "./App.css";
 
 export default function App() {
-  const [scrollY, setScrollY] =node_modules
-dist
-.env
- useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);

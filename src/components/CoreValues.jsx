@@ -10,7 +10,6 @@ export default function CoreValues() {
 
   return (
     <section className="core-values-section" id="value" ref={sectionRef}>
-      {/* 花瓣雨（只在本區塊內） */}
       <PetalRain
         targetRef={sectionRef}
         images={[
@@ -18,16 +17,14 @@ export default function CoreValues() {
           "/images/petal2.png",
           "/images/petal3.png",
         ]}
-        density={0.8} /* 可調：每秒平均生成數量 */
+        density={0.8}
       />
 
-      {/* 原本內容 */}
       <Reveal as="h2" className="core-title" animation="fade-up" once={true}>
         核心價值
       </Reveal>
 
       <div className="core-values">
-        {/* 你原本的四行/四列內容… */}
         <Reveal className="core-row" animation="fade-up" delay={120} once={true}>
           <div className="core-row">
             <FaHandHoldingHeart className="icon" />

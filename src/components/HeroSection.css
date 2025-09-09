@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-/* 背景圖片輪播 + Ken Burns 放大 */
 .bg-image {
   position: absolute;
   top: 0;
@@ -25,7 +24,6 @@
   z-index: 1;
 }
 
-/* Logo 固定在視窗中央，隨滾動移動與透明 */
 .overlay {
   position: fixed;
   top: -150px;

@@ -9,17 +9,15 @@
   color: #333;
 }
 
-/* 2 列 × 3 欄（桌機） */
 .feedback-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 欄 */
-  grid-auto-rows: 1fr;                   /* 高度自適 */
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: 1fr;                   
   gap: 16px;
 }
 
-/* 每張圖保持原比例；加一點浮起與縮放效果 */
 .feedback-item {
   position: relative;
   overflow: hidden;
@@ -31,7 +29,7 @@
 
 .feedback-item img {
   width: 100%;
-  height: auto; /* 不裁切，保留原比例 */
+  height: auto; 
   display: block;
   transition: transform .35s ease;
 }
@@ -39,14 +37,13 @@
   transform: scale(1.05);
 }
 
-/* 平板：2 欄 × 3 列 */
 @media (max-width: 991.98px) {
   .feedback-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 手機：1 欄 × 6 列 */
+
 @media (max-width: 575.98px) {
   .feedback-grid {
     grid-template-columns: 1fr;

@@ -1,6 +1,6 @@
 // src/components/PhotosSection.jsx
 import { useEffect, useRef } from "react";
-import Reveal from "./Reveal";               // ⬅️ 新增
+import Reveal from "./Reveal";
 import "./PhotosSection.css";
 
 export default function PhotosSection() {
@@ -18,7 +18,6 @@ export default function PhotosSection() {
       const content = container.querySelector(".scroll-content");
       if (!content) return;
 
-      // 確保圖片載入完再量寬度
       const imgs = Array.from(content.querySelectorAll("img"));
       let loaded = 0;
       const onImgLoad = () => {
@@ -36,7 +35,6 @@ export default function PhotosSection() {
 
       function start() {
         const half = content.scrollWidth / 2;
-        // 右向從 -half 開始，往 0 前進；左向從 0 開始，往 -half 前進
         offset = direction === "right" ? -half : 0;
 
         const tick = () => {
@@ -68,12 +66,10 @@ export default function PhotosSection() {
 
   return (
     <section className="photos-section" id="photos">
-      {/* 標題先浮出 */}
       <Reveal as="h2" className="section-title" animation="fade-up" once={true}>
         歷年照片
       </Reveal>
 
-      {/* 三條照片列依序浮出（只觸發一次） */}
       <Reveal className="reveal-wrap" animation="fade-up" delay={120} once={true}>
         <div className="photo-row" ref={row1Ref}>
           <div className="scroll-content">

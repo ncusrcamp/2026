@@ -19,7 +19,7 @@
 
 .navbar > ul {
   list-style: none;
-  display: flex;         /* ← 只套在頂層 */
+  display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
@@ -50,23 +50,23 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;                          /* 緊貼父層底部（含 padding 區） */
+  top: 100%;
   left: 0;
   min-width: 220px;
   list-style: none;
   padding: 8px 0;
-  margin: 0;                          /* ← 不要 margin-top，避免出現「空隙」 */
+  margin: 0;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   z-index: 1000;
-  display: none;                      /* 預設完全隱藏、不占位 */
+  display: none;
   opacity: 0;
-  pointer-events: none;               /* 不可點（避免 hover 外也能點到）*/
+  pointer-events: none;
 }
 
 .dropdown:hover > .dropdown-menu,
-.dropdown:focus-within > .dropdown-menu { /* 鍵盤/觸控可用 */
+.dropdown:focus-within > .dropdown-menu {
   display: block;
   opacity: 1;
   pointer-events: auto;

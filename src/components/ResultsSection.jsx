@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
-import Reveal from "./Reveal";               // ⬅️ 新增
+import Reveal from "./Reveal";
 import "./ResultsSection.css";
 
 const PHOTOS = [
@@ -23,7 +23,6 @@ const PHOTOS = [
   { id: "3-4", cohort: "第三屆", src: "/images/r12.jpg" },
 ];
 
-// 固定的「隨機」順序
 const FIXED_RANDOM_ORDER = [
   "3-2", "1-3", "2-4", "1-1",
   "2-1", "3-1", "1-2", "2-3",
@@ -48,7 +47,6 @@ export default function ResultsSection() {
   const gridRef = useRef(null);
   const isoRef = useRef(null);
 
-  // 用固定順序排序出「全部」清單；各屆過濾後也依此順序
   const orderedPhotos = useMemo(() => {
     const map = new Map(PHOTOS.map(p => [p.id, p]));
     return FIXED_RANDOM_ORDER.map(id => map.get(id)).filter(Boolean);
@@ -62,7 +60,6 @@ export default function ResultsSection() {
     return orderedPhotos.filter(p => p.cohort === wanted);
   }, [active, orderedPhotos]);
 
-  // 初始化 Isotope（masonry；等待圖片載入完成）
   useEffect(() => {
     const el = gridRef.current;
     if (!el) return;
@@ -81,7 +78,6 @@ export default function ResultsSection() {
     return () => { isoRef.current?.destroy(); };
   }, []);
 
-  // 切換篩選
   useEffect(() => {
     if (!isoRef.current) return;
     isoRef.current.arrange({ filter: active });
@@ -90,12 +86,10 @@ export default function ResultsSection() {
   return (
     <section className="portfolio section-bg" id="results">
       <div className="container">
-        {/* 標題：只觸發一次的 fade-up */}
         <Reveal as="h2" className="section-title" animation="fade-up" once={true}>
           歷年成果
         </Reveal>
 
-        {/* 切換選項：只觸發一次的 fade-up */}
         <Reveal
           as="ul"
           className="portfolio-flters"
@@ -115,12 +109,9 @@ export default function ResultsSection() {
           ))}
         </Reveal>
 
-        {/* 整個圖片容器視為一體：只觸發一次的 fade-up */}
         <Reveal animation="fade-up" delay={180} once={true}>
           <div className="portfolio-container" ref={gridRef}>
-            {/* Masonry 用的 column sizer */}
             <div className="grid-sizer" />
-            {/* 永遠渲染全部 orderedPhotos，並帶上對應的 filter 類別 */}
             {orderedPhotos.map(p => (
               <div key={p.id} className={`portfolio-item ${clsForCohort(p.cohort)}`}>
                 <div className="portfolio-wrap">

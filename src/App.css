@@ -17,33 +17,29 @@ html, body {
   height: 100px;
 }
 
-/* 保留滾動條溝槽，版面不抖 */
 html {
-  scrollbar-gutter: stable;              /* Chromium/Safari */
-  scrollbar-width: thin;                 /* Firefox: 讓滾動條較細 */
-  scrollbar-color: transparent transparent;  /* 預設透明 */
+  scrollbar-gutter: stable;              
+  scrollbar-width: thin;                
+  scrollbar-color: transparent transparent;
   scroll-behavior: smooth;
 }
 
-/* Firefox：hover 時才上色 */
 html:hover {
-  scrollbar-color: #714910 transparent;    /* thumb / track */
+  scrollbar-color: #714910 transparent;    
 }
 
-/* WebKit 系列（Chrome/Edge/Safari） */
 html::-webkit-scrollbar {
-  width: 6px;          /* 一直保留 6px 的可點擊區域，避免消失抓不到 */
+  width: 6px;         
   height: 6px;
 }
 
-/* 預設透明（看起來像隱藏，但其實還在，能被 hover 到） */
 html::-webkit-scrollbar-track,
 html::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
 html:hover::-webkit-scrollbar-thumb {
-  background: #714910;    /* 深咖，thumb */
+  background: #714910;    
 }
 
 html::-webkit-scrollbar-button,

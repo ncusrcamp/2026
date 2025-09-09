@@ -20,7 +20,7 @@
   box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* 預設隱藏 */
+  scrollbar-width: none;
 }
 
 .news-item {
