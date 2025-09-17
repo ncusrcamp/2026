@@ -1,6 +1,7 @@
 // src/components/IntroSection.jsx
 import Reveal from "./Reveal";
 import "./IntroSection.css";
+const base = import.meta.env.BASE_URL;
 
 export default function IntroSection() {
   return (
@@ -8,7 +9,7 @@ export default function IntroSection() {
       {/* Row 1 */}
       <Reveal as="div" className="r1-left-img" animation="fade-up" delay={0} once={true}>
         <img
-          src="/images/side-img2.png"
+          src={`${base}images/side-img2.png`}
           alt="插入圖片2"
           className="art"
           style={{ "--dx": "-8px", "--dy": "100px", "--rot": "-2deg" }}
@@ -27,7 +28,7 @@ export default function IntroSection() {
 
       <Reveal as="div" className="r1-right-img" animation="fade-up" delay={220} once={true}>
         <img
-          src="/images/side-img1.png"
+          src="src={`${base}images/side-img1.png`}"
           alt="插入圖片1"
           className="art"
           style={{ "--dx": "12px", "--dy": "-30px", "--rot": "4deg" }}
@@ -47,7 +48,7 @@ export default function IntroSection() {
 
       <Reveal as="div" className="r2-right-img" animation="fade-up" delay={460} once={true}>
         <img
-          src="/images/side-img3.png"
+          src={`${base}images/side-img3.png`}
           alt="插入圖片3"
           className="art"
           style={{ "--dx": "0px", "--dy": "-40px", "--rot": "-2deg" }}
@@ -57,7 +58,7 @@ export default function IntroSection() {
       {/* Row 3 */}
       <Reveal as="div" className="r3-left-img" animation="fade-up" delay={580} once={true}>
         <img
-          src="/images/side-img4.png"
+          src={`${base}images/side-img4.png`}
           alt="插入圖片4"
           className="art"
           style={{ "--dx": "-100px", "--dy": "-150px", "--rot": "0deg" }}
@@ -77,7 +78,7 @@ export default function IntroSection() {
 
       <Reveal as="div" className="r3-right-img" animation="fade-up" delay={820} once={true}>
         <img
-          src="/images/side-img5.png"
+          src={`${base}images/side-img5.png`}
           alt="插入圖片5"
           className="art"
           style={{ "--dx": "0px", "--dy": "250px", "--rot": "0deg" }}

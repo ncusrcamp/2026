@@ -2,15 +2,16 @@
 import { useEffect, useRef } from "react";
 import Reveal from "./Reveal";
 import "./PhotosSection.css";
+const base = import.meta.env.BASE_URL;
 
 export default function PhotosSection() {
   const row1Ref = useRef(null);
   const row2Ref = useRef(null);
   const row3Ref = useRef(null);
 
-  const photosRow1 = ["/images/p1.jpg","/images/p2.jpg","/images/p3.jpg","/images/p4.jpg","/images/p5.jpg","/images/p6.jpg","/images/p7.jpg"];
-  const photosRow2 = ["/images/p8.jpg","/images/p9.jpg","/images/p10.jpg","/images/p11.jpg","/images/p12.jpg","/images/p13.jpg","/images/p14.jpg"];
-  const photosRow3 = ["/images/p15.jpg","/images/p16.jpg","/images/p17.jpg","/images/p18.jpg","/images/p19.jpg","/images/p20.jpg","/images/p21.jpg"];
+  const photosRow1 = [`${base}images/p1.jpg`, `${base}images/p2.jpg`, `${base}images/p3.jpg`, `${base}images/p4.jpg`, `${base}images/p5.jpg`, `${base}images/p6.jpg`,`${base}images/p6.jpg`, `${base}images/p7.jpg`];
+  const photosRow2 = [`${base}images/p8.jpg`, `${base}images/p9.jpg`, `${base}images/p10.jpg`, `${base}images/p11.jpg`, `${base}images/p12.jpg`, `${base}images/p13.jpg`,`${base}images/p14.jpg`, `${base}images/p15.jpg`];
+  const photosRow3 = [`${base}images/p16.jpg`, `${base}images/p17.jpg`, `${base}images/p18.jpg`, `${base}images/p19.jpg`, `${base}images/p20.jpg`, `${base}images/p21.jpg`,`${base}images/p22.jpg`, `${base}images/p23.jpg`];
 
   useEffect(() => {
     const createInfiniteScroll = (container, speed, direction = "left") => {

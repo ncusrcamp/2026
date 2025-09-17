@@ -1,11 +1,12 @@
 // src/components/HeroSection.jsx
 import { useEffect, useState } from "react";
 import "./HeroSection.css";
+const base = import.meta.env.BASE_URL;
 
 const images = [
-  "/images/bg1.jpg",
-  "/images/bg2.jpg",
-  "/images/bg3.jpg"
+  `${base}images/bg1.jpg`,
+  `${base}images/bg2.jpg`,
+  `${base}images/bg3.jpg`
 ];
 
 export default function HeroSection({ scrollY }) {
@@ -35,7 +36,7 @@ export default function HeroSection({ scrollY }) {
 
       <div className="overlay">
         <img
-          src="/images/logo.png"
+          src={`${base}images/logo.png`}
           alt="Logo"
           className="hero-logo"
           style={{

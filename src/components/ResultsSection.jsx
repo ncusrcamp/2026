@@ -4,24 +4,24 @@ import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
 import Reveal from "./Reveal";
 import "./ResultsSection.css";
+const base = import.meta.env.BASE_URL;
+
 
 const PHOTOS = [
-  // 第一屆 (4)
-  { id: "1-1", cohort: "第一屆", src: "/images/r1.jpg" },
-  { id: "1-2", cohort: "第一屆", src: "/images/r2.jpg" },
-  { id: "1-3", cohort: "第一屆", src: "/images/r3.jpg" },
-  { id: "1-4", cohort: "第一屆", src: "/images/r4.jpg" },
-  // 第二屆 (4)
-  { id: "2-1", cohort: "第二屆", src: "/images/r5.jpg" },
-  { id: "2-2", cohort: "第二屆", src: "/images/r6.jpg" },
-  { id: "2-3", cohort: "第二屆", src: "/images/r7.jpg" },
-  { id: "2-4", cohort: "第二屆", src: "/images/r8.jpg" },
-  // 第三屆 (4)
-  { id: "3-1", cohort: "第三屆", src: "/images/r9.jpg" },
-  { id: "3-2", cohort: "第三屆", src: "/images/r10.jpg" },
-  { id: "3-3", cohort: "第三屆", src: "/images/r11.jpg" },
-  { id: "3-4", cohort: "第三屆", src: "/images/r12.jpg" },
+  { id: "1-1", cohort: "第一屆", src: `${base}images/r1.jpg` },
+  { id: "1-2", cohort: "第一屆", src: `${base}images/r2.jpg` },
+  { id: "1-3", cohort: "第一屆", src: `${base}images/r3.jpg` },
+  { id: "1-4", cohort: "第一屆", src: `${base}images/r4.jpg` },
+  { id: "2-1", cohort: "第二屆", src: `${base}images/r5.jpg` },
+  { id: "2-2", cohort: "第二屆", src: `${base}images/r6.jpg` },
+  { id: "2-3", cohort: "第二屆", src: `${base}images/r7.jpg` },
+  { id: "2-4", cohort: "第二屆", src: `${base}images/r8.jpg` },
+  { id: "3-1", cohort: "第三屆", src: `${base}images/r9.jpg` },
+  { id: "3-2", cohort: "第三屆", src: `${base}images/r10.jpg` },
+  { id: "3-3", cohort: "第三屆", src: `${base}images/r11.jpg` },
+  { id: "3-4", cohort: "第三屆", src: `${base}images/r12.jpg` },
 ];
+
 
 const FIXED_RANDOM_ORDER = [
   "3-2", "1-3", "2-4", "1-1",

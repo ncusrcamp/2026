@@ -1,16 +1,16 @@
 // src/components/FeedbackSection.jsx
 import Reveal from "./Reveal";
 import "./FeedbackSection.css";
+const base = import.meta.env.BASE_URL;
 
 const images = [
-  "/images/feedback1.png",
-  "/images/feedback2.png",
-  "/images/feedback3.png",
-  "/images/feedback4.png",
-  "/images/feedback5.png",
-  "/images/feedback6.png",
+  `${base}images/feedback1.jpg`,
+  `${base}images/feedback2.jpg`,
+  `${base}images/feedback3.jpg`,
+  `${base}images/feedback4.jpg`,
+  `${base}images/feedback5.jpg`,
+  `${base}images/feedback6.jpg`,
 ];
-
 export default function FeedbackSection() {
   return (
     <section className="feedback-section" id="feedback">
@@ -25,7 +25,7 @@ export default function FeedbackSection() {
             as="figure"
             className="feedback-item"
             animation="fade-up"
-            delay={100 + i * 120}   
+            delay={100 + i * 120}
             once={true}
           >
             <img src={src} alt={`學員心得 ${i + 1}`} loading="lazy" />

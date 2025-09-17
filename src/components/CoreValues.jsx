@@ -4,6 +4,7 @@ import "./CoreValues.css";
 import Reveal from "./Reveal";
 import PetalRain from "./PetalRain";
 import { FaHandHoldingHeart, FaGlobe, FaLeaf, FaLanguage } from "react-icons/fa";
+const base = import.meta.env.BASE_URL;
 
 export default function CoreValues() {
   const sectionRef = useRef(null);
@@ -13,9 +14,9 @@ export default function CoreValues() {
       <PetalRain
         targetRef={sectionRef}
         images={[
-          "/images/petal1.png",
-          "/images/petal2.png",
-          "/images/petal3.png",
+          `${base}images/petal1.png`,
+          `${base}images/petal2.png`,
+          `${base}images/petal3.png`,
         ]}
         density={0.8}
       />
