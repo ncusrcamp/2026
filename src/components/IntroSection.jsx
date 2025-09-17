@@ -28,7 +28,7 @@ export default function IntroSection() {
 
       <Reveal as="div" className="r1-right-img" animation="fade-up" delay={220} once={true}>
         <img
-          src="src={`${base}images/side-img1.png`}"
+          src={`${base}images/side-img1.png`}
           alt="插入圖片1"
           className="art"
           style={{ "--dx": "12px", "--dy": "-30px", "--rot": "4deg" }}

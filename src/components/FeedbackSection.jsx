@@ -4,12 +4,12 @@ import "./FeedbackSection.css";
 const base = import.meta.env.BASE_URL;
 
 const images = [
-  `${base}images/feedback1.jpg`,
-  `${base}images/feedback2.jpg`,
-  `${base}images/feedback3.jpg`,
-  `${base}images/feedback4.jpg`,
-  `${base}images/feedback5.jpg`,
-  `${base}images/feedback6.jpg`,
+  `${base}images/feedback1.png`,
+  `${base}images/feedback2.png`,
+  `${base}images/feedback3.png`,
+  `${base}images/feedback4.png`,
+  `${base}images/feedback5.png`,
+  `${base}images/feedback6.png`,
 ];
 export default function FeedbackSection() {
   return (

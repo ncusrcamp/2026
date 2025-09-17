@@ -11,7 +11,7 @@ export default function PhotosSection() {
 
   const photosRow1 = [`${base}images/p1.jpg`, `${base}images/p2.jpg`, `${base}images/p3.jpg`, `${base}images/p4.jpg`, `${base}images/p5.jpg`, `${base}images/p6.jpg`,`${base}images/p6.jpg`, `${base}images/p7.jpg`];
   const photosRow2 = [`${base}images/p8.jpg`, `${base}images/p9.jpg`, `${base}images/p10.jpg`, `${base}images/p11.jpg`, `${base}images/p12.jpg`, `${base}images/p13.jpg`,`${base}images/p14.jpg`, `${base}images/p15.jpg`];
-  const photosRow3 = [`${base}images/p16.jpg`, `${base}images/p17.jpg`, `${base}images/p18.jpg`, `${base}images/p19.jpg`, `${base}images/p20.jpg`, `${base}images/p21.jpg`,`${base}images/p22.jpg`, `${base}images/p23.jpg`];
+  const photosRow3 = [`${base}images/p16.jpg`, `${base}images/p17.jpg`, `${base}images/p18.jpg`, `${base}images/p19.jpg`, `${base}images/p20.jpg`, `${base}images/p21.jpg`];
 
   useEffect(() => {
     const createInfiniteScroll = (container, speed, direction = "left") => {
