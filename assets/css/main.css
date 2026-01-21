@@ -611,7 +611,7 @@ section,
   z-index: 3;
 }
 
-.hero .video-background {
+.hero .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -620,10 +620,11 @@ section,
   z-index: 1;
 }
 
-.hero .video-background video {
+.hero .hero-bg img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* 關鍵：確保照片填滿且不拉伸 */
+  object-position: center; /* 圖片置中 */
 }
 
 .hero .video-overlay {
@@ -666,13 +667,6 @@ section,
   .hero p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero .hero-buttons .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
   }
 }
 
