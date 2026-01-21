@@ -81,7 +81,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: rgba(0, 0, 0, 0);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -847,8 +847,12 @@ section,
 
 @media (max-width: 992px) {
   .features .tab-content .content-area {
+    margin-left: 10px;
+    margin-right: 10px;
     padding-right: 0;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -879,6 +883,7 @@ section,
   .features .tab-content .content-area p {
     font-size: 15px;
     margin-top: 30px;
+    text-align: left;
   }
 }
 
@@ -928,7 +933,12 @@ section,
 
 @media (max-width: 992px) {
   .features .tab-content .visual-content {
-    padding-left: 0;
+    padding-left: 0;          /* 移除左邊距 */
+    margin-right: 0;          /* 移除右邊距 */
+    margin-top: 0; 
+    display: flex;
+    justify-content: center;  /* 容器內部置中 */
+    align-items: center;
   }
 }
 
@@ -1027,188 +1037,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Features Cards Section
---------------------------------------------------------------*/
-.features-cards .feature-card {
-  height: 100%;
-  background-color: var(--surface-color);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 94%);
-  position: relative;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.features-cards .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.features-cards .feature-card.highlighted {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 85%), var(--surface-color));
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
-}
-
-.features-cards .feature-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 65px;
-  height: 65px;
-  border-radius: 18px;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 40%));
-  color: var(--contrast-color);
-}
-
-.features-cards .feature-icon i {
-  font-size: 1.75rem;
-}
-
-.features-cards h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.features-cards p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.features-cards .feature-benefits {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-.features-cards .feature-benefits li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--heading-color);
-}
-
-.features-cards .feature-benefits li i {
-  color: var(--accent-color);
-  font-size: 1rem;
-}
-
-.features-cards .feature-image {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px color-mix(in srgb, var(--default-color), transparent 92%);
-}
-
-.features-cards .feature-image img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
-
-.features-cards .feature-image img:hover {
-  transform: scale(1.05);
-}
-
-.features-cards .feature-testimonial {
-  margin-top: 4rem;
-  background-color: var(--surface-color);
-  border-radius: 16px;
-  box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 94%);
-  overflow: hidden;
-}
-
-.features-cards .testimonial-image {
-  height: 100%;
-}
-
-.features-cards .testimonial-image img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.features-cards .testimonial-content {
-  padding: 3rem;
-}
-
-.features-cards .testimonial-content .quote-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
-  font-size: 1.75rem;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-}
-
-.features-cards .testimonial-content p {
-  font-size: 1.25rem;
-  font-style: italic;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: var(--heading-color);
-}
-
-.features-cards .testimonial-content .testimonial-author h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.features-cards .testimonial-content .testimonial-author span {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 991px) {
-  .features-cards .feature-card {
-    margin-bottom: 1.5rem;
-    padding: 2rem;
-  }
-
-  .features-cards .testimonial-content {
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .features-cards .testimonial-content .quote-icon {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .features-cards .feature-testimonial {
-    margin-top: 2rem;
-  }
-
-  .features-cards .testimonial-image {
-    max-height: 300px;
-    overflow: hidden;
-  }
-
-  .features-cards .testimonial-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .features-cards .testimonial-content {
-    padding: 1.5rem;
-  }
-
-  .features-cards .testimonial-content p {
-    font-size: 1.1rem;
-  }
-}
 
 /*--------------------------------------------------------------
 # Call To Action Section
